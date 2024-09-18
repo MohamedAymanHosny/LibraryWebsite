@@ -41,3 +41,5 @@ This project implements a simple **Library Management System** using C++. The sy
 2. Compile the code using a C++ compiler (e.g., `g++`).
 3. Run the program to interact with the library system.
 
+![Library Management System Diagram]https://edrawcloudpublicus.s3.amazonaws.com/viewer/self/4593811/share/2024-9-11/1726071432/main.svg
+
