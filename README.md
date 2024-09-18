@@ -35,6 +35,9 @@ This project implements a simple **Library Management System** using C++. The sy
   - The `Library` class has a **composition** relationship with `Admin`, meaning the library cannot exist without an admin.
   - The `User` class has an **aggregation** relationship with `Book`, allowing users to interact with books without owning them directly.
 
+## Diagram
+![Library Management System Diagram](https://edrawcloudpublicus.s3.amazonaws.com/viewer/self/4593811/share/2024-9-11/1726071432/main.svg)
+
 ## How to Run
 
 1. Clone the repository.
