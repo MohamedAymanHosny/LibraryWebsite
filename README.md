@@ -1,4 +1,4 @@
-# Library Management System in C++
+<h1 align="center">Library Management System in C++</h1>
 
 ## Project Description
 This project implements a simple **Library Management System** using C++. The system includes functionalities for managing books and users, both from an admin's perspective and a regular user's perspective. It leverages object-oriented principles such as **inheritance**, **encapsulation**, and **polymorphism** to manage library operations.
