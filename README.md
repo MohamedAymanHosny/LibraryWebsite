@@ -1,55 +1,48 @@
 <h1 align="center">Library Management System in C++</h1>
 
-
 ## Project Description
-This project implements a **Library Management System** in C++ that provides functionalities for managing books and user operations. The system supports both admin and user roles with distinct privileges, following Object-Oriented Programming (OOP) principles.
-
----
+This project implements a simple **Library Management System** using C++. The system includes functionalities for managing books and users, both from an admin's perspective and a regular user's perspective. It leverages object-oriented principles such as **inheritance**, **encapsulation**, and **polymorphism** to manage library operations.
 
 ## Features
 
-### Admin Functionalities:
-1. **Add Book**: Admins can add new books to the library, ensuring unique book IDs.
-2. **Update Book**: Admins can modify book details, such as name and number of copies.
-3. **Delete Book**: Admins can remove books from the library.
+1. **Admin Functions**:
+   - **Add Book**: The admin can add new books to the library.
+   - **Update Book**: The admin can update book details (name and copies available).
+   - **Delete Book**: The admin can remove a book from the library.
 
-### User Functionalities:
-1. **Signup & Login**: Users can create accounts and log in to access the system.
-2. **Buy Books**: Users can purchase books if sufficient copies are available.
-3. **Borrow Books**: Users can borrow books within the library's stock limits.
+2. **User Functions**:
+   - **Signup and Login**: Users can sign up and log in to the system.
+   - **Buy Book**: A user can buy a book from the library if copies are available.
+   - **Borrow Book**: Users can borrow a book if there are enough copies in the library.
 
-### General Features:
-- Display a list of available books with their details (ID, name, copies).
-- Separate interfaces for admins and users.
-
----
+3. **Book Management**:
+   - Each book has an ID, name, and number of copies available.
+   - Admins have the authority to manage the books in the library, while users can only view, borrow, or buy books.
 
 ## Key Classes
 
-- **Book**: Represents each book with attributes: `name`, `id`, and `copies`.
-- **Person**: A base class for handling credentials (`username`, `password`), extended by `Admin` and `User`.
-- **User**: Enables book purchase and borrowing.
-- **Admin**: Grants permission for full book management.
-- **Library**: Manages the collections of books, users, and admins, serving as the core system.
+- **Book**: Represents a book in the library, with attributes like `name`, `id`, and `copies`.
+- **Person**: A base class for both `User` and `Admin`, managing login credentials.
+- **User**: Inherits from `Person` and allows users to buy and borrow books.
+- **Admin**: Inherits from `Person` and has permissions to manage (add, update, delete) books.
+- **Library**: Manages the collection of books and users and handles the overall library operations.
 
----
+## Concepts Applied
 
-## Applied Concepts
+- **Object-Oriented Programming (OOP)**: Inheritance, encapsulation, and aggregation.
+- **Data Structures**: Utilizes vectors for storing lists of books and users.
+- **Composition and Aggregation**:
+  - The `Library` class has a **composition** relationship with `Admin`, meaning the library cannot exist without an admin.
+  - The `User` class has an **aggregation** relationship with `Book`, allowing users to interact with books without owning them directly.
 
-- **Object-Oriented Programming (OOP)**:
-  - **Encapsulation**: Ensures secure handling of book and user data.
-  - **Inheritance**: Admin and User classes inherit from the Person class.
-  - **Polymorphism**: Overridden login behavior for different roles.
-- **Data Structures**: Uses `std::vector` for dynamic storage of books and users.
-- **Error Handling**: Prevents duplicate book IDs and handles invalid inputs gracefully.
-
----
+## Diagram
+![Library Management System Diagram](https://edrawcloudpublicus.s3.amazonaws.com/viewer/self/4593811/share/2024-9-11/1726071432/main.svg)
 
 ## How to Run
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/MohamedAymanHosny/LibraryWebsite.git
-
-
-
+1. Clone the repository: Open (cmd or git), navigate to your destination folder using `cd path/to/destination/folder`
+2. run `git clone https://github.com/MohamedAymanHosny/LibraryWebsite.git`.
+3. Navigate to the project directory: Run `cd LibraryWebsite`.
+4. Update the repository: Use `git pull origin main`.
+5. Compile the code: Use a C++ compiler (e.g., `g++`).
+6. Run the program to interact with the library system.
