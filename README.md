@@ -40,13 +40,10 @@ This project implements a simple **Library Management System** using C++. The sy
 
 ## How to Run
 
-1.0 Clone the repository.
-1.1 Open (cmd or git)
-1.2 cd path/to/destination/folder
-1.3 git clone https://github.com/MohamedAymanHosny/LibraryWebsite.git
-1.4 cd LibraryWebsite
-1.5 git pull origin main
-2. Compile the code using a C++ compiler (e.g., `g++`).
-3. Run the program to interact with the library system.
+1. Clone the repository: Open (cmd or git), navigate to your destination folder using `cd path/to/destination/folder`, and run `git clone https://github.com/MohamedAymanHosny/LibraryWebsite.git`.
+2. Navigate to the project directory: Run `cd LibraryWebsite`.
+3. Update the repository: Use `git pull origin main`.
+4. Compile the code: Use a C++ compiler (e.g., `g++`).
+5. Run the program to interact with the library system.
 
 
