@@ -41,18 +41,13 @@ public:
     void borrowBooks(vector<Book>& books);
 };
 
-class Admin : public Person
-{
+class Admin : public Person {
 public:
     Admin(string u, string p) : Person(u, p) {}
 
-    void addBook(vector<Book> &books, string name, int id, int copies)
-    {
-        
-        for (const Book &book : books)
-        {
-            if (book.getId() == id)
-            {
+    void addBook(vector<Book>& books, string name, int id, int copies) {
+        for (const Book& book : books) {
+            if (book.getId() == id) {
                 cout << "A book with ID " << id << " already exists. Please try adding a book with a different ID." << endl;
                 return;
             }
@@ -62,12 +57,9 @@ public:
         cout << "Book added successfully." << endl;
     }
 
-    void updateBook(vector<Book> &books, int id, string newName, int newCopies)
-    {
-        for (Book &book : books)
-        {
-            if (book.getId() == id)
-            {
+    void updateBook(vector<Book>& books, int id, string newName, int newCopies) {
+        for (Book& book : books) {
+            if (book.getId() == id) {
                 book = Book(newName, id, newCopies);
                 cout << "Book updated successfully." << endl;
                 return;
@@ -76,12 +68,9 @@ public:
         cout << "Book not found." << endl;
     }
 
-    void deleteBook(vector<Book> &books, int id)
-    {
-        for (int i = 0; i < books.size(); ++i)
-        {
-            if (books[i].getId() == id)
-            {
+    void deleteBook(vector<Book>& books, int id) {
+        for (int i = 0; i < books.size(); ++i) {
+            if (books[i].getId() == id) {
                 books.erase(books.begin() + i);
                 cout << "Book deleted successfully." << endl;
                 return;
@@ -155,10 +144,10 @@ void User::buyBooks(vector<Book>& books) {
         cout << "Enter quantity to buy: ";
         cin >> quantity;
 
-        bool found = false;  
+        bool found = false;
         for (Book& book : books) {
             if (book.getId() == id) {
-                found = true;  
+                found = true;
                 if (book.getCopies() >= quantity) {
                     book.setCopies(book.getCopies() - quantity);
                     cout << "You successfully bought " << quantity << " copies of the book!" << endl;
@@ -187,10 +176,10 @@ void User::borrowBooks(vector<Book>& books) {
         cout << "Enter quantity to borrow: ";
         cin >> quantity;
 
-        bool found = false;  
+        bool found = false;
         for (Book& book : books) {
             if (book.getId() == id) {
-                found = true;  
+                found = true;
                 if (book.getCopies() >= quantity) {
                     book.setCopies(book.getCopies() - quantity);
                     cout << "You successfully borrowed " << quantity << " copies of the book!" << endl;
@@ -219,17 +208,19 @@ int main() {
 
         if (choice == 1) {
             string username, password;
+            cin.ignore();
             cout << "Enter admin username: ";
-            cin >> username;
+            getline(cin, username);
             cout << "Enter admin password: ";
-            cin >> password;
+            getline(cin, password);
             library.adminSignUp(username, password);
         } else if (choice == 2) {
             string username, password;
+            cin.ignore();
             cout << "Enter admin username: ";
-            cin >> username;
+            getline(cin, username);
             cout << "Enter admin password: ";
-            cin >> password;
+            getline(cin, password);
 
             Admin* admin = library.loginAdmin(username, password);
             if (admin) {
@@ -243,7 +234,7 @@ int main() {
                     if (adminChoice == 1) {
                         string name;
                         int id, copies;
-                        cin.ignore(); 
+                        cin.ignore();
                         cout << "Enter book name: ";
                         getline(cin, name);
                         cout << "Enter book ID: ";
@@ -254,7 +245,7 @@ int main() {
                     } else if (adminChoice == 2) {
                         int id, copies;
                         string name;
-                        cin.ignore(); 
+                        cin.ignore();
                         cout << "Enter book ID to update: ";
                         cin >> id;
                         cin.ignore();
@@ -275,17 +266,19 @@ int main() {
             }
         } else if (choice == 3) {
             string username, password;
+            cin.ignore();
             cout << "Enter username: ";
-            cin >> username;
+            getline(cin, username);
             cout << "Enter password: ";
-            cin >> password;
+            getline(cin, password);
             library.userSignUp(username, password);
         } else if (choice == 4) {
             string username, password;
+            cin.ignore();
             cout << "Enter username: ";
-            cin >> username;
+            getline(cin, username);
             cout << "Enter password: ";
-            cin >> password;
+            getline(cin, password);
 
             User* user = library.loginUser(username, password);
             if (user) {
